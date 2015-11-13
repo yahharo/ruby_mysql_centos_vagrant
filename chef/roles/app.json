@@ -1,0 +1,20 @@
+{
+   "name": "app",
+   "chef_type": "role",
+   "json_class": "Chef::Role",
+   "run_list": [
+     "recipe[basic_app]",
+     "recipe[ruby_rbenv::system_install]"
+   ],
+   "override_attributes": {
+     "rbenv": {
+       "rubies": [ "2.2.3" ],
+       "global": "2.2.3",
+       "gems": {
+         "2.2.3": [
+           { "name": "bundler" }
+         ]
+       }
+     }
+   }
+}
